@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    
+
+    <h2 class="heading">Calculator</h2>
+    <h3 class="heading-number-two">Note: The multiplication symbol is replaced with an asterisk because it is not working properly.</h3>
+
+
+
+
+
+
+
+
+    <div class="container">
+
+        <div class="calculator">
+            <form>
+
+                <div class="display">
+                    <input type="text" name="display">
+                </div>
+                
+                <div>
+                    <input class="operator" type="button" value="AC" onclick="display.value='' ">
+                    <input class="operator" type="button" value="DE" onclick="display.value=display.value.toString().slice(0,-1)">
+                    <input class="operator" type="button" value="." onclick="display.value +='.' ">
+                    <input class="operator" type="button" value="/" onclick="display.value +='/' ">
+                </div>
+
+                <div>
+                    <input type="button" value="7" onclick="display.value +='7' ">
+                    <input type="button" value="8" onclick="display.value +='8' ">
+                    <input type="button" value="9" onclick="display.value +='9' ">
+                    <input class="operator" type="button" value="*" onclick="display.value +='*' ">
+                </div>
+
+                <div>
+                    <input type="button" value="4" onclick="display.value +='4' ">
+                    <input type="button" value="5" onclick="display.value +='5' ">
+                    <input type="button" value="6" onclick="display.value +='6' ">
+                    <input class="operator" type="button" value="-" onclick="display.value +='-' ">
+                </div>
+
+                <div>
+                    <input type="button" value="1" onclick="display.value +='1' ">
+                    <input type="button" value="2" onclick="display.value +='2' ">
+                    <input type="button" value="3" onclick="display.value +='3' ">
+                    <input class="operator" type="button" value="+" onclick="display.value +='+' ">
+                </div>
+
+                <div>
+                    <input type="button" value="00" onclick="display.value +='00' ">
+                    <input type="button" value="0" onclick="display.value +='0' ">
+                    <input class="operator equal" type="button" value="=" onclick="display.value=eval(display.value)">
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright © 2025 by Aydin | <a href="https://ehobby.in/" class="ehobby">via EHOBBY Classes</a> 
+            </p>
+        </div>
+    </footer>
+
+
+
+    
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Functions of a calculator
+    When we are pressing on any HTML element, or in this case, a number or operator, we want something to happen.
+    There is a function, named as onclick function, which helps us to give behaviours by clicking on our particular element.
+    Syntax of onclick is
+    1. Onclick= "function-name()"
+    2. Onclick= "directly write the code logic here"
+
+
+    #. onclick="display.value ='7' "
+Whats happening in this line?
+Answer: This line's code will produce a single 7
+ Drawback: It will not type in multiple digits of the same number. 
+ E.g: Suppose I want to type 77 but I can't because 7 will be pressed only once
+ Solution: We have to put a plus symbol before the equals to produce multiple 7s.
+
+    #. Whats the purpose of the key AC?
+    AC stands for All Clear, such that when we type some mumbers, or calculate something and we press on AC,
+    It will clear the display
+    How to implement this?
+    When we click on AC, the display's value will be blank. We are going to use the onclick function and we will make the 
+    display value blank.
+
+
+
+    # What's the purpose of the DE (delete button)?
+    Well, the delete button is used to delete only one number from the last.
+    How to implement this?
+    To make the delete button clickable, what we have to use?
+    We have to use the onclick feature but differently such that it can only delete one number from the last.
+    Deleting one number form the last is like slicing of the last bread.
+    So we will use the slice function to cut off the last element, but there is a condition.
+    The slice function only works on strings, not on integer values, and display.value is an integer value.
+    E.g: I have milk, and you want panir from me. So I have to convert the milk into panir.
+    We have to convert the display.value to a string to make the slice function work.
+
+
+    # Whats the purpose of the equals to?
+    Answer: To evaluate whatever is written into the display.value
+    How do we do that?
+    Answer: using eval function
+-->
